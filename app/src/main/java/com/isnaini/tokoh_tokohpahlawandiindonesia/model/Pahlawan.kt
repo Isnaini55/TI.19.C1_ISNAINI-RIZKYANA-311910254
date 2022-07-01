@@ -6,5 +6,5 @@ data class Pahlawan(
     var tempatlahir : String,
     var tgllahir : String,
     var wafat : String,
-    var usiameninggal : String
+    var usia : String
 )

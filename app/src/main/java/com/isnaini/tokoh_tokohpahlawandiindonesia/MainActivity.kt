@@ -1,7 +1,12 @@
 package com.isnaini.tokoh_tokohpahlawandiindonesia
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.isnaini.tokoh_tokohpahlawandiindonesia.adapter.AdapterNamaPahlawan
 import com.isnaini.tokoh_tokohpahlawandiindonesia.databinding.ActivityMainBinding
 import com.isnaini.tokoh_tokohpahlawandiindonesia.model.Pahlawan
@@ -27,7 +32,32 @@ class MainActivity : AppCompatActivity() {
 
         binding.list.adapter = AdapterNamaPahlawan(this, listPahlawan, object : AdapterNamaPahlawan.OnClickListener {
             override fun detailData(item: Pahlawan?) {
-                TODO("Not yet implemented")
+                Dialog(this@MainActivity).apply {
+                    requestWindowFeature(Window.FEATURE_NO_TITLE)
+                    setCancelable(true)
+                    setContentView(R.layout.detail_pahlawan)
+
+                    val image =this.findViewById<ImageView>(R.id.image_pahlawan)
+                    val nama = this.findViewById<TextView>(R.id.txtnamaPhlawan)
+
+                    val tempatlahir = this.findViewById<TextView>(R.id.txttempatlahir)
+                    val tanggallahir = this.findViewById<TextView>(R.id.txttanggallahir)
+                    val wafat = this.findViewById<TextView>(R.id.txtwafat)
+                    val usia = this.findViewById<TextView>(R.id.txtusia)
+
+                    val btn = this.findViewById<Button>(R.id.btnClose)
+
+                    image.setImageResource(item?.foto ?:0)
+                    nama.text = "${item?.nama}"
+                    tempatlahir.text = "${item?.tempatlahir}"
+                    tanggallahir.text = "${item?.tgllahir}"
+                    wafat.text = "${item?.wafat}"
+                    usia.text = "${item?.usia}"
+
+                    btn.setOnClickListener {
+                        this.dismiss()
+                    }
+                }.show()
             }
         })
     }
