@@ -6,6 +6,10 @@ Kelas :TI.19.C1
 NIM   : 311910254
 ~~~
 
+# Subscribe Channel YouTube
+![Capture](https://user-images.githubusercontent.com/81541764/176993900-5294f3e3-37b5-49c3-941e-bc998682d777.PNG)
+
+
 # Splash Screen
 ![Screenshot_2022-07-02-06-47-53-58](https://user-images.githubusercontent.com/81541764/176978355-1dbdf533-bc74-496e-9509-5ec18f07750f.png)
 
